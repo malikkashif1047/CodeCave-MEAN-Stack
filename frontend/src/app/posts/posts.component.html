@@ -1,0 +1,102 @@
+<div class="d-flex mt-5 justify-content-between">
+  <div style="width: 100px; height: 700px;" class="p-2 col-2 mh-100 flex-fill">
+  </div>
+  <div class="p-2 col-8 flex-fill">
+
+    <div class="container">
+      <div class="card" *ngFor="let question of questions.slice().reverse()">
+        <div class="container-fliud">
+          <div class="wrapper row">
+            <!-- <div class="preview col-md-6">
+                </div> -->
+            <div class="details col-md-12">
+              <h3 class="product-title">q:: {{question.title}}</h3>
+              <div class="">
+                <div class="rating pull-left">
+                  <div class="stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <br/>
+                    <span class="review-no">41 reviews</span>
+                  </div>
+                </div>
+                <div class="rating pull-right">
+                  <div class="stars">
+                    <span class="text-danger pull-right">
+                      <button class="btn btn-primary fa fa-thumbs-up" (click)="voteUp(question.questionsID)"></button>
+                      <button class="btn btn-danger fa fa-thumbs-down" (click)="voteDown(question.questionsID)"></button>
+                    </span>
+                    <br/>
+
+                    <span class="review-no">Votes:
+                      <strong>
+                        {{question.vote}}
+                      </strong>
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+              <p class="product-description">{{question.question}}</p>
+              <!-- <tag-input [ngModel]="question.tags" theme='dark' disable=" true" removable="false">
+              </tag-input> -->
+              <!-- <div *ngFor="let ans of question.answers;let i = index">
+                <br/>
+                <div class="ml-5">
+                  {{ans.ans}}
+                  <span *ngIf="ans.email" class="pull-right text-light bg-custom-color p-1">{{ans.email}}</span>
+                </div>
+                <hr/>
+              </div> -->
+
+
+              <div class="answer-border m-3">
+                <div *ngFor="let ans of question.answers;let i = index">
+                  <br/>
+                  <div class="ml-5">{{ans.ans}}
+                    <span class="pull-right text-light bg-custom-color p-1 mr-1 mb-1">{{ans.email}}</span>
+                  </div>
+                  <hr/>
+                </div>
+              </div>
+              <span class="tag-size">
+                <tag-input [ngModel]="question.tags" theme='dark' disable=" true" removable="false">
+                </tag-input>
+              </span>
+
+              <a href="" class="  p-1 mb-2">
+                show 4 more comments
+              </a>
+
+
+              <a class="bg-custom-color text-light p-1">
+                <strong>show 4 more comments</strong>
+              </a>
+              <form [formGroup]="ansForm">
+                <div class="form-group">
+                  <label for="">
+                    <strong>Your Answer </strong>
+                  </label>
+                  <textarea rows="5" formControlName="ans" type="text" class="form-control" id="ans" aria-describedby="passHelp" placeholder="Enter your answer here">
+                   </textarea>
+                </div>
+                <div class="form-group" style="text-align:center;">
+                  <button type="button" class="btn btn-dark" (click)="ansQuestion(question.questionsID)">Submit</button>
+                </div>
+              </form>
+              <br/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="p-2 col-2 flex-fill">
+  </div>
+</div>

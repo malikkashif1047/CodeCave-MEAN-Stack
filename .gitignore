@@ -1,0 +1,11 @@
+**/node_modules
+/old backend
+
+frontend/dist/
+**/logs
+**/public
+**/*.log
+backend/package-lock.json
+frontend/package-lock.json
+builds
+

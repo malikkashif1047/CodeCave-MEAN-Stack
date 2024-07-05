@@ -1,0 +1,10 @@
+var serverURL = "https://localhost:3338/";
+var host = "127.0.0.1";
+var user = "root";
+var password = null;
+var database = "codecave";
+module.exports.host = host;
+module.exports.user = user;
+module.exports.password = password;
+module.exports.database = database;
+module.exports.serverURL = serverURL;

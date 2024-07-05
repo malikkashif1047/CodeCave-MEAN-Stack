@@ -1,0 +1,62 @@
+<div class="d-flex mt-5 justify-content-between">
+  <div style="width: 100px; height: 700px;" class="p-2 col-2 mh-100 flex-fill">
+
+  </div>
+  <div class="p-2 col-8 flex-fill">
+    <div class="container m-3">
+      <div class="container">
+        <div class="continer-fluid mt-5">
+          <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+              <div class="row card" style="margin-top:40px; padding:20px; background-color:rgba(0,0,0,0.2)54d400;border-radius:15px;
+            -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
+                <div class="col-sm-12" style="text-align:center;">
+                  Ask Question:
+                </div>
+
+                <div class="col-sm-12">
+                  <form [formGroup]="askForm">
+                    <div class="form-group">
+                      <label for="exampleInputUsername">Question Title</label>
+                      <input formControlName="title" type="text" class="form-control" id="exampleInputUsername" aria-describedby="userHelp" placeholder="Title">
+                      <small id="userHelp" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="passwordInput">Question</label>
+                      <textarea formControlName="question" type="text" class="form-control" id="question" aria-describedby="passHelp" placeholder="Question">
+                     </textarea>
+                    </div>
+                    <div class="form-group" style="text-align:center;">
+                      <div class="">
+                        <!-- <label for="tags" class="pull-left">Enter Your Tags</label> -->
+                        <div >
+                          Add Tags From List
+                          <tag-input formControlName="tags" class="form-control" [(ngModel)]="item" [onlyFromAutocomplete]="true" theme='dark' clearOnBlur="true" [maxItems]='5'>
+                            <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="['Javascript', 'ReactJs', 'AngularJs']">
+                            </tag-input-dropdown>
+                          </tag-input>
+                        </div>
+                      </div>
+                    </div>
+                    <br/>
+                    <!-- <div *ngFor=" let i of item">
+                      {{i}}
+                    </div> -->
+                    <div class="form-group mt-5" style="text-align:center;">
+                      <button type="button" class="btn btn-dark" (click)="askQuestion()">Ask Question</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-2 col-2 flex-fill">
+  </div>
+</div>
